@@ -1,13 +1,4 @@
-import {
-  App,
-  Art,
-  Button,
-  Column,
-  Text,
-  PerfMonitor,
-  State,
-  Keybind,
-} from 'asciitorium';
+import { App, Art, Row, Column, Text, PerfMonitor, State, Keybind } from 'asciitorium';
 
 // State for counter demo
 const count = new State(0);
@@ -23,21 +14,18 @@ const togglePerfMonitor = () => {
 const app = (
   <App>
     <Keybind keyBinding="p" action={togglePerfMonitor} />
-
-    <Column style={{ align: 'center', gap: 1, width: '100%' }}>
-      <Art font="pencil" text="Welcome to" align="center" />
-      <Art src="asciitorium" align="center" />
-
-      <Text style={{ align: 'center', gap: 1 }}>
-        Edit src/main.tsx and save to reload.
-      </Text>
-
-      <Art src="beating-heart" width={20} align="center" />
-
-      <Text style={{ align: 'center', gap: 1 }}>
-        Press [P] to toggle performance monitor
-      </Text>
-    </Column>
+    <Row align="center" height="fill">
+      <Column align="center" gap={{ top: 7 }}>
+        <Art src="flame" position={{ x: 12, y: 8 }} align="center" />
+        <Art src="lantern" align="center" />
+      </Column>
+      <Column align="center" gap={{ left: 5 }}>
+        <Art font="pencil" text="The" align="center"/>
+        <Art font="pencil" text="Lonely Lantern" align="center" />
+        <Art font="pencil" text="Inn" align="center" />
+      </Column>
+    </Row>
+    <Text align="center">Press [Enter] to start</Text>
 
     <PerfMonitor visible={showPerfMonitor} />
   </App>

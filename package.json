@@ -13,10 +13,11 @@
     "map-builder": "node scripts/map-builder.js"
   },
   "devDependencies": {
-    "typescript": "^5.6.0",
-    "vite": "^5.4.8",
+    "prettier": "^3.6.2",
     "tslib": "^2.8.0",
-    "tsx": "^4.20.0"
+    "tsx": "^4.20.0",
+    "typescript": "^5.6.0",
+    "vite": "^5.4.8"
   },
   "dependencies": {
     "asciitorium": "^0.1.39"
