@@ -12,20 +12,21 @@ const togglePerfMonitor = () => {
 };
 
 const app = (
-  <App>
+  <App align="top-center">
     <Keybind keyBinding="p" action={togglePerfMonitor} />
-    <Row align="center" height="fill">
-      <Column align="center" gap={{ top: 7 }}>
-        <Art src="flame" position={{ x: 12, y: 8 }} align="center" />
-        <Art src="lantern" align="center" />
+    <Row height={28} align="center">
+      <Column align="center">
+        <Art src="flame" position={{ x: 12, y: 13 }} />
+        <Art src="lantern" />
       </Column>
-      <Column align="center" gap={{ left: 5 }}>
-        <Art font="pencil" text="The" align="center"/>
-        <Art font="pencil" text="Lonely Lantern" align="center" />
-        <Art font="pencil" text="Inn" align="center" />
+      <Column gap={{ left: 5 }}>
+        <Art font="marker" text="The" letterSpacing={1} />
+        <Art font="marker" text="Lonely" letterSpacing={1} />
+        <Art font="marker" text="Lantern" letterSpacing={1} />
+        <Art font="marker" text="Inn" letterSpacing={1} />
       </Column>
     </Row>
-    <Text align="center">Press [Enter] to start</Text>
+    <Text>Press [Enter] to start</Text>
 
     <PerfMonitor visible={showPerfMonitor} />
   </App>

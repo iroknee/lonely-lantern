@@ -20,6 +20,6 @@
     "vite": "^5.4.8"
   },
   "dependencies": {
-    "asciitorium": "^0.1.39"
+    "asciitorium": "^0.1.41"
   }
 }
