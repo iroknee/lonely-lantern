@@ -1,7 +1,9 @@
-import { App, Art, Row, Column, Text, PerfMonitor, State, Keybind } from 'asciitorium';
+import { App, PerfMonitor, State, Keybind, Switch } from 'asciitorium';
+import { TitleScreen } from './TitleScreen.js';
+import { Prologue } from './Prologue.js';
 
-// State for counter demo
-const count = new State(0);
+// Game state machine - holds the current screen component
+const currentScreen = new State<any>(() => <TitleScreen />);
 
 // State for PerfMonitor visibility toggle
 const showPerfMonitor = new State(false);
@@ -11,22 +13,25 @@ const togglePerfMonitor = () => {
   showPerfMonitor.value = !showPerfMonitor.value;
 };
 
+// Transition to Prologue screen
+const goToPrologue = () => {
+  currentScreen.value = () => (
+    <Prologue onComplete={() => {
+      // TODO: Transition to next screen
+      console.log('Prologue complete');
+    }} />
+  );
+};
+
 const app = (
   <App align="top-center">
     <Keybind keyBinding="p" action={togglePerfMonitor} />
-    <Row height={28} align="center">
-      <Column align="center">
-        <Art src="flame" position={{ x: 12, y: 13 }} />
-        <Art src="lantern" />
-      </Column>
-      <Column gap={{ left: 5 }}>
-        <Art font="marker" text="The" letterSpacing={1} />
-        <Art font="marker" text="Lonely" letterSpacing={1} />
-        <Art font="marker" text="Lantern" letterSpacing={1} />
-        <Art font="marker" text="Inn" letterSpacing={1} />
-      </Column>
-    </Row>
-    <Text>Press [Enter] to start</Text>
+
+    {/* Title Screen: Enter key transitions to Prologue */}
+    <Keybind keyBinding="Enter" action={goToPrologue} />
+
+    {/* State machine - renders current screen */}
+    <Switch width="fill" height="fill" component={currentScreen} />
 
     <PerfMonitor visible={showPerfMonitor} />
   </App>

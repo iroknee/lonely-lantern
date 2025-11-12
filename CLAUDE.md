@@ -6,20 +6,16 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 **Lonely Lantern** is a bard adventure game built with **asciitorium** (created via `npm create asciitorium`). The player controls a bard who accompanies heroes into dungeons, witnesses their triumphs and failures, then composes songs about their adventures to perform at the Lonely Tavern Inn.
 
-### Game Concept
+For detailed game concept, vision, and narrative design, see:
 
-- **Top-down overworld** for traveling between locations
-- **First-person dungeon exploration** (witnessing heroes in action)
-- **Memory-based song composition** mechanic (accuracy determines earnings)
-- **Three dungeons** in the forboding valley beyond Bleakrock: The Echoing Cave (easy), The Burrows (medium), The Tomb of Tahara (hard)
-- **Economic survival** gameplay - perform nightly for coin, get 1/3 of earnings
-- Dark humor tone mixing glory-seeking with harsh reality
-
-See [design/intro.md](design/intro.md) for narrative design (not finalized).
+- [CONCEPT_AND_VISION.md](CONCEPT_AND_VISION.md) - Core concept, themes, and design pillars
+- [GAME_LOOP_FLOW.md](GAME_LOOP_FLOW.md) - Gameplay loop, scene transitions, and systems
 
 ### Technical Foundation
 
 Asciitorium is a framework for building ASCII art-based applications that run in both web browsers and CLI terminals. The project uses TSX/JSX syntax with a custom JSX runtime (`jsxImportSource: "asciitorium"`).
+
+**IMPORTANT**: For detailed component usage, patterns, and examples, see [ASCIITORIUM_REFERENCE.md](ASCIITORIUM_REFERENCE.md). Always consult this reference when implementing asciitorium components to ensure correct usage patterns.
 
 ## Development Commands
 
