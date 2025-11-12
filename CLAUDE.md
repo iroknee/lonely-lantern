@@ -11,7 +11,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - **Top-down overworld** for traveling between locations
 - **First-person dungeon exploration** (witnessing heroes in action)
 - **Memory-based song composition** mechanic (accuracy determines earnings)
-- **Three dungeons** in the Bleakreach: The Echoing Cave (easy), The Burrows (medium), The Tomb of Tahara (hard)
+- **Three dungeons** in the forboding valley beyond Bleakrock: The Echoing Cave (easy), The Burrows (medium), The Tomb of Tahara (hard)
 - **Economic survival** gameplay - perform nightly for coin, get 1/3 of earnings
 - Dark humor tone mixing glory-seeking with harsh reality
 
