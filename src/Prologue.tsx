@@ -26,7 +26,7 @@ export const Prologue = ({ onComplete }: PrologueProps) => {
         Rumors claim these places promise treasure and glory. Mostly, it's just death. ¶¶
         
         Into this bleak landscape wanders a recently graduated bard. While having no
-        possessions of his own, he does carry a strain of optimism (that his mother classifies as a medical concern). ¶¶ Arriving
+        possessions of his own, he does carry a strain of optimism that his mother classifies as a medical concern. ¶¶ Arriving
         at the Lonely Lantern Inn, he spies a sign nailed to the outer wall: BARDS WANTED! ¶¶
 
         An unusual policy for a place with no visible prospects of commerce... but then again, thats why they need a bard! ¶¶

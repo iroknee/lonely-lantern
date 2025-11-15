@@ -3,7 +3,7 @@
 ## 1. Overview
 
 **Lonely Lantern** is a retro ASCII **RPG / Simulation** built on the **Asciitorium** platform using **TypeScript on Node**.
-You play as an unnamed bard chronicling the deeds (and frequent deaths) of adventurers who pass through a fading tavern in Bleakrock, a small town at the edge of a forboding valley.
+You play as an unnamed bard chronicling the deeds (and frequent deaths) of adventurers who pass through a fading tavern in the ruins of an old mining settlement at the edge of a deep and broken valley.
 
 Unlike typical RPGs, you’re **not the hero** — you document them.  
 Your songs, accuracy, and wit become the true measure of success.
@@ -12,7 +12,7 @@ Your songs, accuracy, and wit become the true measure of success.
 
 ## 2. Core Concept
 
-> _In a half-empty tavern in Bleakrock, a nameless bard records the tales of heroes and monsters.
+> _In a half-empty tavern at the edge of a cursed valley, a nameless bard records the tales of heroes and monsters.
 > What they say — and what you write — becomes the song that outlives them all._
 
 ### Genre & Style
@@ -46,10 +46,10 @@ You shape the world through conversation, songs, and how you portray others.
 
 1. **Converse** with Gareth and heroes at the inn.
 2. **Follow** a hero into one of three dungeons:
-   - _The Cave_ (easy)
-   - _The Burrows_ (medium)
-   - _The Tomb_ (hard, mysterious)
-3. **Observe** the hero’s fate (success or death).
+   - _The Graveditch_ (easy)
+   - _The Mine_ (medium)
+   - _The Tomb_ (hard)
+3. **Observe** the hero's fate (success or death).
 4. **Compose** a song based on accuracy and melody.
 5. **Perform** it for the crowd; earn bardic points and gold.
 6. **Upgrade** instruments and reputation to influence future runs.
@@ -75,9 +75,9 @@ Over time, the bard’s growing renown unlocks new instruments, reactions, and l
 
 ### Setting Highlights
 
-- **The Lonely Tavern Inn**: the central hub for dialogue and story.
-- **Bleakrock**: a small town (the inn and a handful of houses) at the valley's edge.
-- **The Forboding Valley**: a cursed expanse containing three dungeons — The Cave, The Burrows, and The Tomb.
+- **The Lonely Lantern Inn**: the central hub for dialogue and story.
+- **The Ruins**: the remains of an old mining settlement clinging to the valley's edge.
+- **The Valley**: a cursed expanse containing three fissures — The Graveditch, The Mine, and The Tomb.
 
 ---
 
@@ -169,4 +169,4 @@ This dynamic, LLM-driven exchange establishes tone, teaches the basics, and intr
 
 ---
 
-_“Heroes die. Songs don’t.”_
+_"When heroes fall, legends rise."_

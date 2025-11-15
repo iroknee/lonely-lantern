@@ -18,7 +18,8 @@ export const TitleScreen = () => {
           <Art font="marker" text="Inn" letterSpacing={1} />
         </Column>
       </Row>
-      <Text>Press [Enter] to start</Text>
+      <Text>"When Heros Fall, Legends Rise"</Text>
+      <Art gap={3} src="enter" />
     </Column>
   );
 };

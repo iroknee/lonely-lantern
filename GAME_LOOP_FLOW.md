@@ -76,7 +76,7 @@ The bard (player avatar) acts as the connective tissue between them — recordin
 
 **Systems:**
 
-- Procedural dungeon generator (3 difficulty tiers: Cave / Burrows / Tomb)
+- Procedural dungeon generator (3 difficulty tiers: Graveditch / Mine / Tomb)
 - Basic combat AI for heroes and enemies
 - Basic treasure finding
 - Event logger (records all actions for song “accuracy” scoring)
