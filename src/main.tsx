@@ -24,8 +24,8 @@ const goToPrologue = () => {
 };
 
 const app = (
-  <App align="top-center" border>
-    <Keybind keyBinding="p" action={togglePerfMonitor} />
+  <App align="top">
+    <Keybind keyBinding="F2" action={togglePerfMonitor} />
 
     {/* Title Screen: Enter key transitions to Prologue */}
     <Keybind keyBinding="Enter" action={goToPrologue} />
