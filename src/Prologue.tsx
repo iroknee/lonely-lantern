@@ -1,43 +1,66 @@
-import { Column, Keybind, Text } from 'asciitorium';
+import { Art, Column, Keybind, State, Switch, Text } from 'asciitorium';
 
 /**
  * Prologue - Opening narrative that sets up the game world
  * Shows background on Pickwick, Hollowreach valley, and the bard's arrival
+ * Displays in two timed sequences
  */
-
-const prologueText =
-  'The once-mining town of Pickwick sits at the edge of a cursed expanse known as ' +
-  'Hollowreach. Once beautiful and prosperous, the valley now crawls with' +
-  'malevolent evil that seem to originate from three fissures:¶¶' +
-  '  • The Cave,¶' + 
-  '  • The Graveditch, and¶' +  
-  '  • The Tomb¶¶' +
-  'Each promises glory. Mostly they deliver death on the daily.¶' +
-  '¶' +
-  'A lonely bard — recently unemployed, deeply in debt, and out of options —' +
-  'arrives at the doorstep of the only remaining structure in Pickwick: ' +
-  'The Lonely Lantern Inn. The only place in a hundred hectare radius hiring' +
-  'bards these days. They say making a name for yourself starts at the bottom.' +
-  '¶' +
-  'This is worn down shack is definitely the bottom.¶' +
-  '¶' +
-  'Before opening the door, a grim thought surfaces: why exactly does¶' +
-  'an inn in the middle of nowhere need so many bards?¶' +
-  '¶' +
-  '¶' +
-  'Press [Enter] to continue...';
 
 interface PrologueProps {
   onComplete: () => void;
 }
 
-export const Prologue = ({ onComplete }: PrologueProps) => {
+const Part1 = () => {
   return (
-    <Column align="center" width="fill" height="fill" gap={{ top: 5 }}>
+    <Text width={75} textAlign="top-left">
+      The ruins of an old mining settlement cling to the rim of Hollowreach. ¶ Once prosperous the
+      valley now leaks horrors through the earth like a broken sewer no one wants to claim
+      responsibility for. ¶¶ Three fissures scar the landscape: ¶¶ • The Graveditch ¶ • The Mine ¶ •
+      The Tomb ¶¶ Adventurers claim these places promise treasure and glory. Mostly, they just
+      deliver death.
+    </Text>
+  );
+};
+
+const Part2 = () => {
+  return (
+    <Column align="center" gap={1}>
+      <Text width={75} textAlign="top-left">
+        Into this bleak landscape wanders a bard — recently unemployed, abandoned by fortune and
+        creditors alike,¶ and carrying a strain of optimism best classified as a medical concern. ¶¶
+        They arrive at the Lonely Lantern Inn. It leans slightly, as if trying to distance itself
+        from its own reputation. Nailed to the door is a sign:
+      </Text>
+
+      <Art src="lonely-lantern-sign" />
+
+      <Text width={75} textAlign="top-left">
+        An unusual policy for a place with no visible guests, no commerce, and a regrettable
+        survival rate. They say every career begins at the bottom. This inn, through great effort,
+        has positioned itself several layers beneath that.
+      </Text>
+    </Column>
+  );
+};
+
+export const Prologue = ({ onComplete }: PrologueProps) => {
+  const currentPart = new State<any>(Part1);
+
+  // Transition to Part2 after 10 seconds
+  setTimeout(() => {
+    currentPart.value = Part2;
+  }, 2000);
+
+  return (
+    <Column align="center" width="fill" height="fill" gap={{ top: 2 }}>
       <Keybind keyBinding="Enter" action={onComplete} />
 
-      <Text width={75} height={20} typewriter={true} typewriterSpeed={30} textAlign="top-left">
-        {prologueText}
+      <Art font="pencil" text="Prologue" />
+
+      <Switch component={currentPart} />
+
+      <Text textAlign="bottom" gap={1}>
+        Press [Enter] to enter the Lonely Lantern...
       </Text>
     </Column>
   );
