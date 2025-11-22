@@ -1,37 +1,73 @@
-import { App, PerfMonitor, State, Keybind, Switch } from 'asciitorium';
+import {
+  App,
+  PerfMonitor,
+  State,
+  Keybind,
+  Switch,
+  Case,
+  Default,
+} from 'asciitorium';
+
 import { TitleScreen } from './TitleScreen.js';
 import { Prologue } from './Prologue.js';
+import { Conversation } from './Conversation.js';
 
-// Game state machine - holds the current screen component
-const currentScreen = new State<any>(() => <TitleScreen />);
+// Top-level game modes
+type ScreenState =
+  | 'title'
+  | 'prologue'
+  | 'innConversation'
+  | 'overworld'
+  | 'songWriting'
+  | 'songPerformance'
+  | 'dungeon';
 
-// State for PerfMonitor visibility toggle
-const showPerfMonitor = new State(false);
+// Single source of truth
+const currentScreen = new State<ScreenState>('title');
 
-// toggle PerfMonitor
-const togglePerfMonitor = () => {
-  showPerfMonitor.value = !showPerfMonitor.value;
-};
+// Perf monitor toggle
+const showPerfMonitor = new State(true);
 
-// Transition to Prologue screen
-const goToPrologue = () => {
-  currentScreen.value = () => (
-    <Prologue onComplete={() => {
-      // TODO: Transition to next screen
-      console.log('Prologue complete');
-    }} />
-  );
-};
+// Transition helpers
+const screen = {
+  goToTitle: () => (currentScreen.value = 'title'),
+  goToPrologue: () => (currentScreen.value = 'prologue'),
+  goToInnConversation: () => (currentScreen.value = 'innConversation'),
+  goToOverworld: () => (currentScreen.value = 'overworld'),
+  goToSongWriting: () => (currentScreen.value = 'songWriting'),
+  goToSongPerformance: () => (currentScreen.value = 'songPerformance'),
+  goToDungeon: () => (currentScreen.value = 'dungeon'),
+} as const;
 
+// App root
 const app = (
   <App align="top">
-    <Keybind keyBinding="F2" action={togglePerfMonitor} />
+    {/* Global perf toggle */}
+    <Keybind
+      keyBinding="F12"
+      action={() => {
+        showPerfMonitor.value = !showPerfMonitor.value;
+      }}
+    />
 
-    {/* Title Screen: Enter key transitions to Prologue */}
-    <Keybind keyBinding="Enter" action={goToPrologue} />
+    {/* Screen state machine */}
+    <Switch width="fill" height="fill" condition={currentScreen}>
+      {/* Splash / title */}
+      <Case when="title" create={TitleScreen} with={{ onComplete: screen.goToPrologue }} />
 
-    {/* State machine - renders current screen */}
-    <Switch width="fill" height="fill" component={currentScreen} />
+      {/* Story intro */}
+      <Case when="prologue" create={Prologue} with={{ onComplete: screen.goToInnConversation }} />
+
+      {/* Innkeeper + NPC conversation hub */}
+      <Case when="innConversation" create={Conversation} with={{
+        onComplete: screen.goToOverworld,
+        onWriteSong: screen.goToSongWriting,
+        onPerformSong: screen.goToSongPerformance,
+        onEnterDungeon: screen.goToDungeon,
+      }} />
+
+      <Default create={TitleScreen} with={{ onComplete: screen.goToPrologue }} />
+    </Switch>
 
     <PerfMonitor visible={showPerfMonitor} />
   </App>

@@ -1,4 +1,4 @@
-import { Art, Column, Keybind, State, Switch, Text } from 'asciitorium';
+import { Art, Column, Keybind, Text } from 'asciitorium';
 
 /**
  * Prologue - Opening narrative that sets up the game world
@@ -11,20 +11,22 @@ interface PrologueProps {
 export const Prologue = ({ onComplete }: PrologueProps) => {
   return (
     <Column align="center" width="fill" height="fill">
+      <Keybind keyBinding="Enter" action={onComplete} />
+
       <Art font="pencil" text="Prologue" />
 
       {/* prettier-ignore */}
       <Text width={75} textAlign="top-left" height="fill" typewriter>
-        The ruins of an old mining settlement cling to the rim of a deep and broken valley. 
-        Once beautiful and prosperous, it now leaks monsters through the earth 
+        The ruins of an old mining settlement cling to the rim of a deep and broken valley.
+        Once beautiful and prosperous, it now leaks monsters through the earth
         like a broken sewer main. Three fissures scar the landscape and seem to be spewing this cesspool of evil: ¶¶
 
         • The Graveditch ¶
         • The Mine ¶
-        • The Tomb ¶¶ 
+        • The Tomb ¶¶
 
         Rumors claim these places promise treasure and glory. Mostly, it's just death. ¶¶
-        
+
         Into this bleak landscape wanders a recently graduated bard. While having no
         possessions of his own, he does carry a strain of optimism that his mother classifies as a medical concern. ¶¶ Arriving
         at the Lonely Lantern Inn, he spies a sign nailed to the outer wall: BARDS WANTED! ¶¶

@@ -2,30 +2,31 @@
 
 ## 1. Overview
 
-**Lonely Lantern** is a retro ASCII **RPG / Simulation** built on the **Asciitorium** platform using **TypeScript on Node**.
-You play as an unnamed bard chronicling the deeds (and frequent deaths) of adventurers who pass through a fading tavern in the ruins of an old mining settlement at the edge of a deep and broken valley.
+**Lonely Lantern** is a retro ASCII **action roguelike** built on the **Asciitorium** platform using **TypeScript on Node**.
+You play as an unnamed bard who accompanies heroes into cursed dungeons, providing real-time musical support while they battle monsters and explore treacherous depths.
 
-Unlike typical RPGs, you’re **not the hero** — you document them.  
-Your songs, accuracy, and wit become the true measure of success.
+Unlike typical RPGs, you **control two things at once**: the hero's movement and combat (WASD/F keys) on one hand, and the bard's protective chords and melodies (HJKL+Shift keys) on the other.
+Your coordination, timing, and musical repertoire become the difference between glory and death.
 
 ---
 
 ## 2. Core Concept
 
-> _In a half-empty tavern at the edge of a cursed valley, a nameless bard records the tales of heroes and monsters.
-> What they say — and what you write — becomes the song that outlives them all._
+> _In a half-empty tavern at the edge of a cursed valley, a nameless bard accompanies heroes into the depths.
+> Your left hand guides the blade. Your right hand plays the song that keeps them alive._
 
 ### Genre & Style
 
-- Narrative RPG / Chronicle Sim
+- Action Roguelike / Dual-Control Rhythm Combat
 - ASCII art presentation
-- Alternates between story-driven dialogue and procedural dungeon observation
+- Alternates between story-driven dialogue at the inn and intense dungeon runs
 
 ### Unique Hook
 
-- The bard is a **projection of the player**, not a written protagonist.
+- **Dual-handed gameplay**: Control the hero's actions with one hand (WASD/F) while playing musical support with the other (HJKL+Shift).
+- **Musical combat system**: Chords and melodies provide buffs, healing, unlocking, and special abilities in real-time.
 - All dialogue uses **LLM-driven natural conversation** — no static menus.
-- NPCs react to tone, memory, and context, creating an open, emergent story.
+- NPCs react to tone, memory, and dungeon performance, creating an open, emergent story.
 
 ---
 

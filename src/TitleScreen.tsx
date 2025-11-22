@@ -1,11 +1,17 @@
-import { Art, Column, Row, Text } from 'asciitorium';
+import { Art, Column, Keybind, Row, Text } from 'asciitorium';
 
 /**
  * Title Screen
  */
-export const TitleScreen = () => {
+interface TitleScreenProps {
+  onComplete?: () => void;
+}
+
+export const TitleScreen = ({ onComplete }: TitleScreenProps = {}) => {
   return (
     <Column align="center" width="fill" height="fill" gap={{ bottom: 1 }}>
+      {onComplete && <Keybind keyBinding="Enter" action={onComplete} />}
+
       <Row height={28} align="center">
         <Column align="center">
           <Art src="flame" position={{ x: 12, y: 13 }} />
